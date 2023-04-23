@@ -13,6 +13,7 @@
         <h2>Discord Nitro Generator</h2>
         <input type="text" name="" placeholder="code will be here" id="password" readonly="">
         <div id="btn" onclick="getPassword()">Generate code</div>
+        <div id="btn" onclick="copyGeneratedCode()">Copy Code</div>
     </div>
     <script type="text/javascript">
         function getPassword(x){
@@ -29,6 +30,16 @@
             document.getElementById("password").value = 'https://discord.gift/' + passwd
         }
     </script>
+    <script>
+    function copyGeneratedCode(x)
+    {
+        var str = document.getElementById("password");
+        window.getSelection().selectAllChildren(str);
+        document.execCommand("Copy")
+        
+        alert("Copied!")
+    }
+</script>
     <script>
         function GoToHomePage(){
             window.location = '/'
